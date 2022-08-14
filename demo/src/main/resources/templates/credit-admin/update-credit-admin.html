@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+        <link th:href="@{/styles/cssandjs/main.css}" rel="stylesheet" />
+</head>
+
+<body th:style="'background:url('+ @{/images/img.png} +');'">
+<div class="container my-5">
+    <h1 style="color:white;">Update Credit</h1>
+    <div>
+        <form action="#" th:action="@{/credit-admin/ui/update/{userIdentityNumber}(userIdentityNumber=${credit.userIdentityNumber})}"
+              th:object="${credit}" method="post">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="creditAmount" class="col-form-label">Credit Amount</label> <input type="text" th:field="*{creditAmount}"
+                                                                                 class="form-control" id="creditAmount"
+                                                                                 placeholder="creditAmount"> <span
+                        th:if="${#fields.hasErrors('creditAmount')}" th:errors="*{creditAmount}" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="creditResult" class="col-form-label">Credit Result</label>
+                    <select id="creditResult" th:field="*{creditResult}"  class="form-control">
+                        <option th:value="'CONFIRMED'" th:text="CONFIRMED"></option>
+                        <option th:value="'REJECTED'" th:text="REJECTED"></option>
+                    </select>
+<!--                    <input type="text" th:field="*{creditResult}"-->
+<!--                                                                                                  class="form-control" id="creditResult"-->
+<!--                                                                                                  placeholder="creditResult"> <span-->
+<!--                        th:if="${#fields.hasErrors('creditResult')}" th:errors="*{creditResult}" class="text-danger"></span>-->
+                </div>
+
+                <div class="form-group col-md-8">
+                    <input type="submit" class="btn btn-danger" style="color:white;" value="Update">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="manipulate" align="center">
+    <form class="form-signin" method="get" th:action="@{/credit-admin/ui/main}">
+        <div class="form-group">
+            <button class="btn btn-lg btn-warning btn-block" type="submit">Main</button>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>

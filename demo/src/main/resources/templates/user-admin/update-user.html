@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+    <!--    <link th:href="@{/styles/cssandjs/main.css}" rel="stylesheet" />-->
+</head>
+
+<body th:style="'background:url('+ @{/images/p.jpg} +');'">
+<div class="container my-5">
+    <h1 style="color:white;">Update User</h1>
+    <div>
+        <form action="#" th:action="@{/user/ui/update/{identityNumber}(identityNumber=${user.identityNumber})}"
+              th:object="${user}" method="post">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="name" class="col-form-label" style="color:white;">Name</label> <input type="text" th:field="*{name}"
+                                                                                 class="form-control" id="name"
+                                                                                 placeholder="Name"> <span
+                        th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="surname" class="col-form-label" style="color:white;">Surname</label> <input type="text" th:field="*{surname}"
+                                                                                       class="form-control" id="surname"
+                                                                                       placeholder="Surname"> <span
+                        th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="phoneNumber" class="col-form-label" style="color:white;">Phone Number</label> <input type="text"
+                                                                                            th:field="*{phoneNumber}"
+                                                                                            class="form-control"
+                                                                                            id="phoneNumber"
+                                                                                            placeholder="phoneNumber">
+                    <span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="phoneNumber"
+                          class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="salary" class="col-form-label" style="color:white;">Salary</label> <input type="text"
+                                                                                                th:field="*{salary}"
+                                                                                                class="form-control"
+                                                                                                id="salary"
+                                                                                                placeholder="salary">
+                    <span th:if="${#fields.hasErrors('salary')}" th:errors="salary"
+                          class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-8">
+                    <input type="submit" class="btn btn-danger" style="color:white;" value="Update">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

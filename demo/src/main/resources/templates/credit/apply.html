@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Credit Center</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+          rel="stylesheet">
+    <link th:href="@{/styles/cssandjs/main.css}" rel="stylesheet"/>
+</head>
+<body th:style="'background:url('+ @{/images/v.jpg} +');'">
+<div class="center-screen">
+    <h2 class="form-signin-heading" style="color:white;">Apply Credit</h2>
+
+    <form class="form-signin" method="GET" th:action="@{/credit/ui/calculate}" th:object="${user}">
+        <div class="form-group">
+            <p>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" class="form-control"
+                       placeholder="Name" required autofocus>
+            </p>
+            <p>
+                <label for="surname">Surname</label>
+                <input type="text" id="surname" name="surname" class="form-control"
+                       placeholder="surname" required autofocus>
+            </p>
+            <p>
+                <label for="identityNumber">Identity Number</label>
+                <input type="text" id="identityNumber" name="identityNumber" class="form-control"
+                       placeholder="Identity Number" required autofocus>
+            </p>
+            <p>
+                <label for="dateOfBirth">Date of Birth</label>
+                <input type="text" id="dateOfBirth" name="dateOfBirth" class="form-control"
+                       placeholder="Date of Birth" required autofocus>
+            </p>
+            <p>
+                <label for="salary">Salary</label>
+                <input type="text" id="salary" name="salary" class="form-control"
+                       placeholder="Salary" required autofocus>
+            </p>
+            <p>
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" class="form-control"
+                       placeholder="Phone Number" required autofocus>
+            </p>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Apply</button>
+        </div>
+    </form>
+    <form class="form-signin" method="get" th:action="@{/credit/ui/main}">
+        <div class="form-group">
+            <button class="btn btn-lg btn-info btn-block" type="submit">Main</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.center-screen {
+   width: 500px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#manipulate {
+    position: fixed;
+     left: 50%;
+     bottom: 20px;
+     transform: translate(-50%, -50%);
+     margin: 0 auto;
+       width: 500px;
+}

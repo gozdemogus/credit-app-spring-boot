@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+    <link th:href="@{/styles/cssandjs/main.css}" rel="stylesheet"/>
+</head>
+
+<body th:style="'background:url('+ @{/images/img.png} +');'">
+<div>
+    <div th:switch="${credits}" class="container my-5">
+        <!-- adminin baskası adına kredi olusturması?? -->
+                <p class="my-5">
+                    <a href="/credit-admin/ui/signup" class="btn btn-warning btn-lg"><i
+                            class="fas fa-user-plus ml-2" style="color:white;">New Credit</i></a>
+                </p>
+        <span th:if="${errorMessage}" th:text="${errorMessage}">Error</span>
+        <div class="col-md-10">
+            <h2 th:case="null" style="color:black;">!</h2>
+            <div th:case="*">
+                <table class="table table-striped table-responsive-md">
+                    <thead>
+                    <tr>
+                        <th style="color:white;">Application Date</th>
+                        <th style="color:white;">Identity Number</th>
+                        <th style="color:white;">Credit Amount</th>
+                        <th style="color:white;">Credit Result</th>
+                        <th style="color:white;">Edit</th>
+                        <th style="color:white;">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="credit : ${credits}">
+                        <td th:text="${credit.applicationDate}" style="color:white;"></td>
+                        <td th:text="${credit.userIdentityNumber}" style="color:white;"></td>
+                        <td th:text="${credit.creditAmount}" style="color:white;"></td>
+                        <td th:text="${credit.creditResult}" style="color:white;"></td>
+                        <td>
+                            <a th:href="@{/credit-admin/ui/edit/{identityNumber}(identityNumber=${credit.userIdentityNumber})}"
+                               class="btn btn-info"><i class="fas fa-user-edit ml-2"></i></a></td>
+                        <td>
+                            <a th:href="@{/credit-admin/ui/delete/{identityNumber}(identityNumber=${credit.userIdentityNumber})}"
+                               class="btn btn-danger"><i class="fas fa-user-times ml-2"></i></a></td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div id="manipulate" align="center">
+    <form class="form-signin" method="get" th:action="@{/credit-admin/ui/main}">
+        <div class="form-group">
+            <button class="btn btn-lg btn-warning btn-block" type="submit">Main</button>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>
