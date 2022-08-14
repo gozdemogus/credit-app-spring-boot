@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class CreditScoreService {
 
     // The credit score service which is assumpted that has been developed before
-    public Long PredefinedCreditScore2(User user) {
+    public Long PredefinedCreditScore(User user) {
 
         Integer userSalary = user.getSalary();
         Long predefinedScore = 0L;

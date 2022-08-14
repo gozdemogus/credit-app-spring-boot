@@ -27,7 +27,7 @@ public class CreditCalculationService {
         CreditResult creditResult = null;
 
         //varsayılan servise gidiyor & kredi skoru sonucunu alıyor
-        Long predefinedScore = creditScoreService.PredefinedCreditScore2(user);
+        Long predefinedScore = creditScoreService.PredefinedCreditScore(user);
 
         //Kredi skoru 500’ün altında ise kullanıcı reddedilir.(Kredi sonucu: Red)
         if (predefinedScore < 500) {
