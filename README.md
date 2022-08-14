@@ -2,7 +2,7 @@
 # TÖDEB Java Spring Bootcamp Graduation Project :mortar_board:
 The aim of this project is writing a restful application for a loan application system, which will take the loan application requests and return the loan result to the customer according to the relevant criteria, using the Spring Boot framework and optionally developing the frontend side.
 
-![image](https://user-images.githubusercontent.com/107196935/183636225-cade30b6-f189-4a0b-93f5-73a4ee7c5a75.png)
+![3](https://user-images.githubusercontent.com/107196935/184552418-d0d0d1ce-0f25-4cf0-bdb5-386d700044cb.jpeg)
 
 <!-- TABLE OF CONTENTS -->
 <details>
