@@ -121,7 +121,7 @@ Two separate applications were developed for admin and applicants.
 :desktop_computer: ```Main``` page that gives the user options to submit an application or query the outcome of an existing application. :point_down:
 ![image](https://user-images.githubusercontent.com/107196935/183636225-cade30b6-f189-4a0b-93f5-73a4ee7c5a75.png)
 :desktop_computer: ```Apply``` page that allows user to fill the required information for credit inquiry and apply. :point_down:
-![image](https://user-images.githubusercontent.com/107196935/183636700-89d25f78-24a8-4f7a-aa4c-adb8897b581d.png)
+![image](https://user-images.githubusercontent.com/107196935/184553073-84de652a-04f8-4256-9f1a-11f63e993a03.png)
 ![image](https://user-images.githubusercontent.com/107196935/183638031-16ffd6e6-e0d2-48f7-8654-ab09b52854c0.png)
 
 In case of user with an existing credit application tries to apply again:
