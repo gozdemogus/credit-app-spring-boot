@@ -110,9 +110,9 @@ You are free to reach other endpoints with bearer token.
 
 Two separate applications were developed for admin and applicants. 
 
-- [USER](http://localhost:2020/credit/ui/main) is provided for applicants where they can apply for loans and inquire about their applications.
+- [Click: USER](http://localhost:2020/credit/ui/main) is provided for applicants where they can apply for loans and inquire about their applications.
 
-- [ADMIN](http://localhost:2020/credit-admin/ui/main) is designed for CRUD operations on user and credit records.
+- [Click: ADMIN](http://localhost:2020/credit-admin/ui/main) is designed for CRUD operations on user and credit records.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## User Application
